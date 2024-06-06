@@ -1,6 +1,6 @@
 package study.demo.discount;
 
-import study.demo.member.Member;
+import study.demo.member.entity.Member;
 
 /**
  * 할인정책 인터페이스

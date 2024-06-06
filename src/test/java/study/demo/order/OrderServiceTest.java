@@ -1,16 +1,28 @@
 package study.demo.order;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import study.demo.member.Grade;
-import study.demo.member.Member;
+import study.demo.JavaAppConfig;
+import study.demo.member.entity.Grade;
+import study.demo.member.entity.Member;
 import study.demo.member.MemberService;
-import study.demo.member.MemberServiceImpl;
+import study.demo.order.entity.Order;
 
 public class OrderServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+//    MemberService memberService = new MemberServiceImpl();
+//    OrderService orderService = new OrderServiceImpl();
+
+    MemberService memberService;
+    OrderService orderService;
+
+    @BeforeEach
+    public void beforeEach() {
+        JavaAppConfig javaAppConfig = new JavaAppConfig();
+        memberService = javaAppConfig.memberService();
+        orderService = javaAppConfig.orderService();
+    }
 
     @Test
     void createOrder() {

@@ -1,5 +1,7 @@
 package study.demo.order;
 
+import study.demo.order.entity.Order;
+
 /**
  * 주문서비스 인터페이스
  */

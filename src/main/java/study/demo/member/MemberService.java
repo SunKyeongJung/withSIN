@@ -1,6 +1,6 @@
 package study.demo.member;
 
-import study.demo.member.Member;
+import study.demo.member.entity.Member;
 
 /**
  * 회원 서비스 인터페이스

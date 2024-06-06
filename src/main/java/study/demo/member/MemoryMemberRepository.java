@@ -1,5 +1,7 @@
 package study.demo.member;
 
+import study.demo.member.entity.Member;
+
 import java.util.HashMap;
 import java.util.Map;
 

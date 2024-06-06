@@ -1,4 +1,4 @@
-package study.demo.member;
+package study.demo.member.entity;
 
 /**
  * 회원정보

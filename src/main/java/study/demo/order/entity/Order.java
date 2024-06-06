@@ -1,4 +1,4 @@
-package study.demo.order;
+package study.demo.order.entity;
 
 /**
  * 주문정보

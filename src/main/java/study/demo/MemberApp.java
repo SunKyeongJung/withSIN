@@ -1,14 +1,17 @@
 package study.demo;
 
-import study.demo.member.Grade;
-import study.demo.member.Member;
+import study.demo.member.entity.Grade;
+import study.demo.member.entity.Member;
 import study.demo.member.MemberService;
 import study.demo.member.MemberServiceImpl;
 
 public class MemberApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+//        MemberService memberService = new MemberServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
 
         // 회원가입
         Member member = new Member(1L, "memberA", Grade.VIP);

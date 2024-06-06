@@ -1,7 +1,7 @@
 package study.demo.discount;
 
-import study.demo.member.Grade;
-import study.demo.member.Member;
+import study.demo.member.entity.Grade;
+import study.demo.member.entity.Member;
 
 /**
  * 정액할인

@@ -1,5 +1,6 @@
 package study.demo.discount;
 
+import org.springframework.stereotype.Component;
 import study.demo.member.entity.Grade;
 import study.demo.member.entity.Member;
 
@@ -7,6 +8,7 @@ import study.demo.member.entity.Member;
  * 정률할인
  * DiscountPolicy 구현
  */
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;

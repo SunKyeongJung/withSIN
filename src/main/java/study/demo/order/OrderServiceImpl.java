@@ -1,5 +1,7 @@
 package study.demo.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import study.demo.discount.DiscountPolicy;
 import study.demo.discount.FixDiscountPolicy;
 import study.demo.discount.RateDiscountPolicy;
@@ -17,6 +19,7 @@ import study.demo.order.entity.Order;
  *     DIP 위반 -> 인터페이스에만 의존하도록 변경해야함 -> null pointer exeption
  *   할인정책을 fix에서 rate로 변경(기능 확장 변경) -> OCP 위반
  */
+@Component
 public class OrderServiceImpl implements OrderService{
 
 //    private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -32,6 +35,7 @@ public class OrderServiceImpl implements OrderService{
     private MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

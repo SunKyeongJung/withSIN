@@ -1,5 +1,6 @@
 package study.demo.member;
 
+import org.springframework.stereotype.Component;
 import study.demo.member.entity.Member;
 
 import java.util.HashMap;
@@ -10,6 +11,8 @@ import java.util.Map;
  * MemberRepository 구현
  *   DB가 확정되지 않아서 메모리멤버로 사용
  */
+
+@Component
 public class MemoryMemberRepository implements MemberRepository {
 
     /**

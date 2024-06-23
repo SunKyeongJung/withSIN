@@ -1,11 +1,14 @@
 package study.demo.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import study.demo.member.entity.Member;
 
 /**
  * 멤버서비스
  * MemberService 구현
  */
+@Component
 public class MemberServiceImpl implements MemberService {
 
     /**
@@ -25,6 +28,11 @@ public class MemberServiceImpl implements MemberService {
      */
     private MemberRepository memberRepository;
 
+    /**
+     * AppConfig에서는 의존관계를 직접 주입하여 사용
+     * 의존관계 자동주입을 해주는 AutoWired 사용
+     */
+    @Autowired  // ac.getBean(MemberRepository.class) 기능과 같음
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

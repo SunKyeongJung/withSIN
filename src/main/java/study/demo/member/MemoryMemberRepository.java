@@ -12,7 +12,7 @@ import java.util.Map;
  *   DB가 확정되지 않아서 메모리멤버로 사용
  */
 
-@Component
+@Component  // memoryMemberRepository
 public class MemoryMemberRepository implements MemberRepository {
 
     /**

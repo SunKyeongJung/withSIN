@@ -35,8 +35,47 @@ public class OrderServiceImpl implements OrderService{
     private MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
 
+    /**
+     * 생성자주입
+     */
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
+    /**
+     * 의존관계 주입 - 수정자 주입
+     *   이거로 주입하면 생성자 없어도 된다
+     */
+//    @Autowired
+//    public void setMemberRepository(MemberRepository memberRepository) {
+//        System.out.println("memberRepository = " + memberRepository);
+//        this.memberRepository = memberRepository;
+//    }
+//    @Autowired
+//    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+//        System.out.println("discountPolicy = " + discountPolicy);
+//        this.memberRepository = memberRepository;
+//    }
+
+    /**
+     * 의존관계 주입-필드주입 방법
+     *   값을 넣어줄 방법이 없음
+     *   setter 만들어서 값 넣어줘야함
+     *   어차피 setter를 만들어야하면 그냥 setter에 Autowired 하는게 나음
+     */
+//    @Autowired
+//    private MemberRepository memberRepository;
+//    @Autowired
+//    private DiscountPolicy discountPolicy;
+
+    /**
+     * 일반메서드 주입
+     *   수정자주입하고 사실 똑같아,,
+     */
+    @Autowired
+    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

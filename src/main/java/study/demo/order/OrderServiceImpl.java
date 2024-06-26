@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import study.demo.annotation.MainDiscountPolicy;
 import study.demo.discount.DiscountPolicy;
 import study.demo.member.MemberRepository;
 import study.demo.member.entity.Member;
@@ -41,7 +42,7 @@ public class OrderServiceImpl implements OrderService{
      * lombok@RequiredArgsConstructor 사용하면 final 붙은거로 생성자 만들어줘서 생성자주입 따로 안해도 됨
      */
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

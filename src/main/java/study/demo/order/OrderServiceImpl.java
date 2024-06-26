@@ -1,13 +1,12 @@
 package study.demo.order;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import study.demo.discount.DiscountPolicy;
-import study.demo.discount.FixDiscountPolicy;
-import study.demo.discount.RateDiscountPolicy;
-import study.demo.member.entity.Member;
 import study.demo.member.MemberRepository;
-import study.demo.member.MemoryMemberRepository;
+import study.demo.member.entity.Member;
 import study.demo.order.entity.Order;
 
 /**
@@ -20,6 +19,7 @@ import study.demo.order.entity.Order;
  *   할인정책을 fix에서 rate로 변경(기능 확장 변경) -> OCP 위반
  */
 @Component
+//@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
 //    private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -32,11 +32,13 @@ public class OrderServiceImpl implements OrderService{
      *   의존 관계에 대한 고민은 외부(App Config)에 맡기고 실헹에만 집중
      * 권한이 줄어듬 But 책임 명확
      */
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
     /**
      * 생성자주입
+     *   생성자가 하나면 @Autowired 생략해도됨
+     * lombok@RequiredArgsConstructor 사용하면 final 붙은거로 생성자 만들어줘서 생성자주입 따로 안해도 됨
      */
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
@@ -56,7 +58,7 @@ public class OrderServiceImpl implements OrderService{
 //    @Autowired
 //    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
 //        System.out.println("discountPolicy = " + discountPolicy);
-//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
 //    }
 
     /**
@@ -74,11 +76,11 @@ public class OrderServiceImpl implements OrderService{
      * 일반메서드 주입
      *   수정자주입하고 사실 똑같아,,
      */
-    @Autowired
-    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    @Autowired
+//    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

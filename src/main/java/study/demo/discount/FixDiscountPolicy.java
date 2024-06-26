@@ -1,5 +1,7 @@
 package study.demo.discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import study.demo.member.entity.Grade;
 import study.demo.member.entity.Member;
 
@@ -7,22 +9,17 @@ import study.demo.member.entity.Member;
  * 정액할인
  * DiscountPolicy 구현
  */
+@Component
 public class FixDiscountPolicy implements DiscountPolicy{
 
     private int discountFixAmount = 1000;
 
     @Override
     public int discount(Member member, int price) {
-        int discountAmount = 0;
         if (member.getGrade() == Grade.VIP) {
-            if (price < discountFixAmount) {
-                discountAmount = 0;
-            } else {
-                discountAmount = discountFixAmount;
-            }
+            return discountFixAmount;
         } else {
-            discountAmount = 0;
+            return 0;
         }
-        return discountAmount;
     }
 }

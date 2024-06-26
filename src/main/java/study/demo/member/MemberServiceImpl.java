@@ -26,7 +26,7 @@ public class MemberServiceImpl implements MemberService {
      *     생성자를 통해서 객체 생성 -> 생성자 주입
      * 외부에서 주입해주는것 같다고 해서 DI(의존관계 주입)
      */
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     /**
      * AppConfig에서는 의존관계를 직접 주입하여 사용

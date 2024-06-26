@@ -1,5 +1,7 @@
 package study.demo.discount;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import study.demo.member.entity.Grade;
 import study.demo.member.entity.Member;
@@ -9,6 +11,7 @@ import study.demo.member.entity.Member;
  * DiscountPolicy 구현
  */
 @Component
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;

@@ -32,7 +32,6 @@ import study.demo.member.MemoryMemberRepository;
          *   AutoAppConfig 클래스의 상단의 패키지 부터 찾음 (package study.demo;)
          */
 //        basePackageClasses = AutoAppConfig.class
-
 )
 public class AutoAppConfig {
 

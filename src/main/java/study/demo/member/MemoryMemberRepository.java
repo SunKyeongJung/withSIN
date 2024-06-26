@@ -1,5 +1,6 @@
 package study.demo.member;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import study.demo.member.entity.Member;
 
@@ -13,6 +14,7 @@ import java.util.Map;
  */
 
 @Component  // memoryMemberRepository
+@Primary
 public class MemoryMemberRepository implements MemberRepository {
 
     /**

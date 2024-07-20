@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="study.demo.beanFind.ApplicationContextInfoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-07-20T09:30:16" hostname="DESKTOP-C5R23N5" time="0.015">
+  <properties/>
+  <testcase name="애플리케이션 빈 출력하기" classname="study.demo.beanFind.ApplicationContextInfoTest" time="0.001"/>
+  <testcase name="모든 빈 출력하기" classname="study.demo.beanFind.ApplicationContextInfoTest" time="0.002"/>
+  <system-out><![CDATA[call AppConfig.memberService
+call AppConfig.memberRepository
+call AppConfig.orderService
+name = appConfig object = study.demo.AppConfig$$SpringCGLIB$$0@b01cb8d
+name = memberService object = study.demo.member.MemberServiceImpl@38c460e8
+name = orderService object = study.demo.order.OrderServiceImpl@7a814310
+name = memberRepository object = study.demo.member.MemoryMemberRepository@4bbf38b8
+name = discountPolicy object = study.demo.discount.RateDiscountPolicy@4e67cfe1
+call AppConfig.memberService
+call AppConfig.memberRepository
+call AppConfig.orderService
+name = org.springframework.context.annotation.internalConfigurationAnnotationProcessor object = org.springframework.context.annotation.ConfigurationClassPostProcessor@71bb8b34
+name = org.springframework.context.annotation.internalAutowiredAnnotationProcessor object = org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor@197ce367
+name = org.springframework.context.annotation.internalCommonAnnotationProcessor object = org.springframework.context.annotation.CommonAnnotationBeanPostProcessor@383cdd4d
+name = org.springframework.context.event.internalEventListenerProcessor object = org.springframework.context.event.EventListenerMethodProcessor@65036e8d
+name = org.springframework.context.event.internalEventListenerFactory object = org.springframework.context.event.DefaultEventListenerFactory@48ccbb32
+name = appConfig object = study.demo.AppConfig$$SpringCGLIB$$0@36551e97
+name = memberService object = study.demo.member.MemberServiceImpl@685d7ba5
+name = orderService object = study.demo.order.OrderServiceImpl@16d41725
+name = memberRepository object = study.demo.member.MemoryMemberRepository@3b6c2be6
+name = discountPolicy object = study.demo.discount.RateDiscountPolicy@25533bba
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

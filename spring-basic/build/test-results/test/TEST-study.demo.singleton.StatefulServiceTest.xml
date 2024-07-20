@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="study.demo.singleton.StatefulServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-20T09:30:16" hostname="DESKTOP-C5R23N5" time="0.008">
+  <properties/>
+  <testcase name="statefulServiceSingleton()" classname="study.demo.singleton.StatefulServiceTest" time="0.008"/>
+  <system-out><![CDATA[name = userA price = 10000
+name = userB price = 20000
+userAPrice = 10000
+userBPrice = 20000
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

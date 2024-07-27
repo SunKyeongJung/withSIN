@@ -1,0 +1,17 @@
+/spring-mvc/servlet/.gradle/
+/spring-mvc/servlet/.idea/
+/spring-mvc/servlet/build/
+/spring-mvc/servlet/gradle/
+/spring-mvc/servlet/out/
+
+/spring-basic/.gradle/
+/spring-basic/.idea/
+/spring-basic/build/
+/spring-basic/gradle/
+
+.class
+.bin
+.idx
+.lock
+.probe
+.xml

@@ -30,7 +30,7 @@ public class ValidationItemControllerV1 {
     }
 
     @GetMapping("/{itemId}")
-    public String item(@PathVariable long itemId, Model model) {
+    public String item(@PathVariable("itemId") long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
         return "validation/v1/item";
@@ -82,14 +82,14 @@ public class ValidationItemControllerV1 {
     }
 
     @GetMapping("/{itemId}/edit")
-    public String editForm(@PathVariable Long itemId, Model model) {
+    public String editForm(@PathVariable("itemId") Long itemId, Model model) {
         Item item = itemRepository.findById(itemId);
         model.addAttribute("item", item);
         return "validation/v1/editForm";
     }
 
     @PostMapping("/{itemId}/edit")
-    public String edit(@PathVariable Long itemId, @ModelAttribute Item item, Model model) {
+    public String edit(@PathVariable("itemId") Long itemId, @ModelAttribute Item item, Model model) {
 
         //검증 오류 결과를 보관
         Map<String, String> errors = new HashMap<>();

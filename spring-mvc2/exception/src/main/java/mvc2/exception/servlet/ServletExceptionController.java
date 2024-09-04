@@ -1,4 +1,4 @@
-package springmvc.exception.servlet;
+package mvc2.exception.servlet;
 
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;

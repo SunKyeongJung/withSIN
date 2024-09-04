@@ -1,4 +1,4 @@
-package springmvc.exception.interceptor;
+package mvc2.exception.interceptor;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

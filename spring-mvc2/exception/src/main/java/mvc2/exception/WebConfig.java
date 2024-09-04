@@ -1,14 +1,13 @@
-package springmvc.exception;
+package mvc2.exception;
 
 import jakarta.servlet.DispatcherType;
 import jakarta.servlet.Filter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import springmvc.exception.filter.LogFilter;
-import springmvc.exception.interceptor.LogInterceptor;
+import mvc2.exception.filter.LogFilter;
+import mvc2.exception.interceptor.LogInterceptor;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

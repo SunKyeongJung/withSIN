@@ -1,4 +1,4 @@
-package springmvc.exception;
+package mvc2.exception;
 
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.boot.web.server.ErrorPage;

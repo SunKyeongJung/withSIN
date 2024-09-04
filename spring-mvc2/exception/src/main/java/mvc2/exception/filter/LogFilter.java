@@ -1,4 +1,4 @@
-package springmvc.exception.filter;
+package mvc2.exception.filter;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;

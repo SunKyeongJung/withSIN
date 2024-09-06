@@ -4,9 +4,8 @@ import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.boot.web.server.ErrorPage;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 
-//@Component // 사용안하면 주석처리)
+//@Component // 사용안하면 주석처리
 public class WebServerCustomizer implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
 
 	@Override

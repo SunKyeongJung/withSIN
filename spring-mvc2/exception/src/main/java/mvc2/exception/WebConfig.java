@@ -11,13 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-<<<<<<< HEAD
-import mvc2.exception.filter.LogFilter;
-import mvc2.exception.interceptor.LogInterceptor;
-=======
 
 import java.util.List;
->>>>>>> origin/main
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

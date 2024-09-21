@@ -1,8 +1,8 @@
 package db1.jdbc.repository;
 
-import db1.jdbc.connection.DBConnectionUtil;
 import db1.jdbc.domain.Member;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.jdbc.support.JdbcUtils;
 
 import javax.sql.DataSource;
@@ -10,14 +10,16 @@ import java.sql.*;
 import java.util.NoSuchElementException;
 
 /**
- * JDBC - DataSource 사용, JdbcUtls 사용
+ * 트랜잭션 - 트랜잭션 매니저
+ * DataSourceUtils.getConnection()
+ * DataSourceUtils.releaseConnection()
  */
 @Slf4j
-public class MemberRepositoryV1 {
+public class MemberRepositoryV3 {
 
 	private static DataSource dataSource;
 
-	public MemberRepositoryV1(DataSource dataSource) {
+	public MemberRepositoryV3(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
 
@@ -113,11 +115,13 @@ public class MemberRepositoryV1 {
 	private void close(Connection con, Statement stmt, ResultSet rs) {
 		JdbcUtils.closeResultSet(rs);
 		JdbcUtils.closeStatement(stmt);
-		JdbcUtils.closeConnection(con);
+		//주의! 트랜잭션 동기화를 사용하려면 DataSourceUtils를 사용해야 한다.
+		DataSourceUtils.releaseConnection(con, dataSource);
 	}
 
 	private static Connection getConnection() throws SQLException {
-		Connection con = dataSource.getConnection();
+		//주의! 트랜잭션 동기화를 사용하려면 DataSourceUtils를 사용해야 한다.
+		Connection con = DataSourceUtils.getConnection(dataSource);
 		log.info("get connection={}, class={}", con, con.getClass());
 		return con;
 	}

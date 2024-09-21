@@ -57,8 +57,8 @@ class MemberServiceV2Test {
 		log.info("END TX");
 		
 		//then
-		Member findMemberA = memberRepository.findbyId(memberA.getMemberId());
-		Member findMemberB = memberRepository.findbyId(memberB.getMemberId());
+		Member findMemberA = memberRepository.findById(memberA.getMemberId());
+		Member findMemberB = memberRepository.findById(memberB.getMemberId());
 		assertThat(findMemberA.getMoney()).isEqualTo(8000);
 		assertThat(findMemberB.getMoney()).isEqualTo(12000);
 	}
@@ -77,8 +77,8 @@ class MemberServiceV2Test {
 				.isInstanceOf(IllegalStateException.class);
 
 		//then
-		Member findMemberA = memberRepository.findbyId(memberA.getMemberId());
-		Member findMemberB = memberRepository.findbyId(memberEx.getMemberId());
+		Member findMemberA = memberRepository.findById(memberA.getMemberId());
+		Member findMemberB = memberRepository.findById(memberEx.getMemberId());
 		assertThat(findMemberA.getMoney()).isEqualTo(10000);
 		assertThat(findMemberB.getMoney()).isEqualTo(10000);
 	}

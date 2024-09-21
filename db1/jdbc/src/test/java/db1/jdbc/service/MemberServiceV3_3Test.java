@@ -5,7 +5,6 @@ import db1.jdbc.repository.MemberRepositoryV3;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
@@ -91,8 +90,8 @@ class MemberServiceV3_3Test {
 		log.info("END TX");
 		
 		//then
-		Member findMemberA = memberRepository.findbyId(memberA.getMemberId());
-		Member findMemberB = memberRepository.findbyId(memberB.getMemberId());
+		Member findMemberA = memberRepository.findById(memberA.getMemberId());
+		Member findMemberB = memberRepository.findById(memberB.getMemberId());
 		assertThat(findMemberA.getMoney()).isEqualTo(8000);
 		assertThat(findMemberB.getMoney()).isEqualTo(12000);
 	}
@@ -111,8 +110,8 @@ class MemberServiceV3_3Test {
 				.isInstanceOf(IllegalStateException.class);
 
 		//then
-		Member findMemberA = memberRepository.findbyId(memberA.getMemberId());
-		Member findMemberB = memberRepository.findbyId(memberEx.getMemberId());
+		Member findMemberA = memberRepository.findById(memberA.getMemberId());
+		Member findMemberB = memberRepository.findById(memberEx.getMemberId());
 		assertThat(findMemberA.getMoney()).isEqualTo(10000);
 		assertThat(findMemberB.getMoney()).isEqualTo(10000);
 	}

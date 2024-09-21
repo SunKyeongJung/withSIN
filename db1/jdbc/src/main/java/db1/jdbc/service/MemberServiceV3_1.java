@@ -40,8 +40,8 @@ public class MemberServiceV3_1 {
 	}
 
 	private void bizLogic(String fromId, String toId, int money) throws SQLException {
-		Member fromMember = memberRepository.findbyId(fromId);
-		Member toMember = memberRepository.findbyId(toId);
+		Member fromMember = memberRepository.findById(fromId);
+		Member toMember = memberRepository.findById(toId);
 
 		memberRepository.update(fromId, fromMember.getMoney() - money);
 		validation(toMember);//오류케이스 생성

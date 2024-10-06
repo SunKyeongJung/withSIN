@@ -1,24 +1,41 @@
 package db2.itemservice.domain;
 
-import db2.itemservice.domain.Item;
 import db2.itemservice.repository.ItemRepository;
 import db2.itemservice.repository.ItemSearchCond;
 import db2.itemservice.repository.ItemUpdateDto;
 import db2.itemservice.repository.memory.MemoryItemRepository;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Transactional
 @SpringBootTest
 class ItemRepositoryTest {
 
     @Autowired
     ItemRepository itemRepository;
+
+/*
+    @Autowired
+    PlatformTransactionManager transactionManager;
+    TransactionStatus status;
+
+    @BeforeEach
+    void beforeEach() {
+        //트랜젝션 시작
+        status = transactionManager.getTransaction(new DefaultTransactionDefinition());
+    }
 
     @AfterEach
     void afterEach() {
@@ -26,8 +43,12 @@ class ItemRepositoryTest {
         if (itemRepository instanceof MemoryItemRepository) {
             ((MemoryItemRepository) itemRepository).clearStore();
         }
+        //트랜젝션 롤백
+        transactionManager.rollback(status);
     }
+*/
 
+    //@Commit or @Rollback(false) 사용시 @Transactional 있어도 커밋 가능
     @Test
     void save() {
         //given

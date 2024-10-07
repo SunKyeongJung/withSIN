@@ -1,5 +1,6 @@
 package db2.itemservice;
 
+import db2.itemservice.config.JpaConfig;
 import db2.itemservice.config.MyBatisConfig;
 import db2.itemservice.repository.ItemRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,8 @@ import org.springframework.context.annotation.Profile;
 //@Import(JdbcTemplateV1Config.class)
 //@Import(JdbcTemplateV2Config.class)
 //@Import(JdbcTemplateV3Config.class)
-@Import(MyBatisConfig.class)
+//@Import(MyBatisConfig.class)
+@Import(JpaConfig.class)
 @SpringBootApplication(scanBasePackages = "db2.itemservice.web")
 public class ItemServiceApplication {
 

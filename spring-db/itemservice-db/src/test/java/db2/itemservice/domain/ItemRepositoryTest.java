@@ -3,22 +3,17 @@ package db2.itemservice.domain;
 import db2.itemservice.repository.ItemRepository;
 import db2.itemservice.repository.ItemSearchCond;
 import db2.itemservice.repository.ItemUpdateDto;
-import db2.itemservice.repository.memory.MemoryItemRepository;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Slf4j
 @Transactional
 @SpringBootTest
 class ItemRepositoryTest {
@@ -87,6 +82,7 @@ class ItemRepositoryTest {
         Item item2 = new Item("itemA-2", 20000, 20);
         Item item3 = new Item("itemB-1", 30000, 30);
 
+        log.info("repository={}", itemRepository.getClass());
         itemRepository.save(item1);
         itemRepository.save(item2);
         itemRepository.save(item3);

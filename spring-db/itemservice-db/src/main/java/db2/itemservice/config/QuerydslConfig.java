@@ -2,7 +2,6 @@ package db2.itemservice.config;
 
 import db2.itemservice.repository.ItemRepository;
 import db2.itemservice.repository.jpa.JpaItemRepositoryV3;
-import db2.itemservice.repository.jpa.SpringDataJpaItemRepository;
 import db2.itemservice.service.ItemService;
 import db2.itemservice.service.ItemServiceV1;
 import jakarta.persistence.EntityManager;
@@ -15,8 +14,6 @@ import org.springframework.context.annotation.Configuration;
 public class QuerydslConfig {
 
 	private final EntityManager em;
-
-	private final SpringDataJpaItemRepository springDataJpaItemRepository;
 
 	@Bean
 	public ItemService itemService() {

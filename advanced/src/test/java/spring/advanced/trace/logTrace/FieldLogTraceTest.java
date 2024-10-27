@@ -3,8 +3,6 @@ package spring.advanced.trace.logTrace;
 import org.junit.jupiter.api.Test;
 import spring.advanced.trace.TraceStatus;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class FieldLogTraceTest {
 
 	FieldLogTrace trace = new FieldLogTrace();

@@ -1,7 +1,6 @@
 package spring.advanced.app.v5;
 
 import org.springframework.stereotype.Repository;
-import spring.advanced.trace.callback.TraceCallback;
 import spring.advanced.trace.callback.TraceTemplate;
 import spring.advanced.trace.logTrace.LogTrace;
 

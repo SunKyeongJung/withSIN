@@ -1,6 +1,5 @@
 package spring.advanced.trace.template;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import spring.advanced.trace.TraceStatus;
 import spring.advanced.trace.logTrace.LogTrace;

@@ -2,9 +2,7 @@ package spring.advanced.app.v3;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import spring.advanced.trace.TraceId;
 import spring.advanced.trace.TraceStatus;
-import spring.advanced.trace.helloTrace.HelloTraceV2;
 import spring.advanced.trace.logTrace.LogTrace;
 
 @Repository
